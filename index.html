@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #f9c78b, #fff5e1); /* Orange and creme gradient */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #4caf50; /* Green heading color */
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #4caf50;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+        section {
+            background-color: #fff;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::before,
+        h2::after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: #4caf50; /* Green line color */
+            top: 50%;
+            transform: translateY(-50%);
+            transition: width 0.3s ease-in-out;
+        }
+
+        h2::before {
+            left: -60px;
+        }
+
+        h2::after {
+            right: -60px;
+        }
+        footer{
+            text-align: center;
+        }
+
+        h2:hover::before,
+        h2:hover::after {
+            width: 30px;
+        }
+
+        .dish {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dish:hover {
+            background-color: #f9f9f9;
+        }
+
+        .dish span {
+            flex: 1;
+            margin: 5px;
+        }
+
+        .price {
+            text-align: right;
+            color: #e44d26; /* Orange color for price */
+        }
+
+        .image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.8YJCmSvePJFBokPs6FqETgHaHi%26pid%3DApi&f=1&ipt=53e77200fab49e883a64f99a451c3c6aa11f8a48aa93321f238fc87ac6c52116&ipo=images') no-repeat center center fixed;
+            background-size: cover;
+            filter: brightness(50%);
+        }
+        .thali {
+            text-decoration: underline;
+            margin-right: 20px;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>अपनी RASOI</h1>
+        <p>Delicious Dishes to Satisfy Your Cravings</p>
+    </header>
+
+    <section>
+        <h2>शुरुआती व्यंजन</h2>
+        <div class="dish">
+            <span>Roasted Peanut</span>
+            <span class="price">89/-</span>
+        </div>
+        <div class="dish">
+            <span>Channa Roast</span>
+            <span class="price">99/-</span>
+        </div>
+        <div class="dish">
+            <span>Peanut Chat</span>
+            <span class="price">99/-</span>
+        </div>
+        <div class="dish">
+            <span>Gobhi Manchurian</span>
+            <span class="price">129/-</span>
+        </div>
+        <div class="dish">
+            <span>Schezwan Manchurian</span>
+            <span class="price">129/-</span>
+        </div>
+        <div class="dish">
+            <span>Veg Kothe</span>
+            <span class="price">139/-</span>
+        </div>
+        <div class="dish">
+            <span>Crispy Corn</span>
+            <span class="price">139/-</span>
+        </div>
+        <div class="dish">
+            <span>Lollipop (3 piece)</span>
+            <span class="price">89/-</span>
+        </div>
+        <div class="dish">
+            <span>Lollipop (6 piece)</span>
+            <span class="price">149/-</span>
+        </div>
+        <div class="dish">
+            <span>Honey Chili Potato</span>
+            <span class="price">149/-</span>
+        </div>
+        <div class="dish">
+            <span>Chinese Bhel</span>
+            <span class="price">149/-</span>
+        </div>
+        <div class="dish">
+            <span>Veg Cuttlet</span>
+            <span class="price">149/-</span>
+        </div>
+        <div class="dish">
+            <span>Hara Bhara Kabab</span>
+            <span class="price">169/-</span>
+        </div>
+        <div class="dish">
+            <span>Spring Roll</span>
+            <span class="price">179/-</span>
+        </div>
+        <div class="dish">
+            <span>Paneer 65</span>
+            <span class="price">179/-</span>
+        </div>
+        <div class="dish">
+            <span>Chilli Mushroom (gravy)</span>
+            <span class="price">179/-</span>
+        </div>
+        <div class="dish">
+            <span>Chilli Mushroom (dry)</span>
+            <span class="price">189/-</span>
+        </div>
+        <div class="dish">
+            <span>Chilli Paneer (gravy)</span>
+            <span class="price">179/-</span>
+        </div>
+        <div class="dish">
+            <span>Chilli Paneer (dry)</span>
+            <span class="price">189/-</span>
+        </div>
+        <!-- Continue adding more dishes here -->
+
+    </section>
+    <section>
+        <h2>Soups</h2>
+        <div class="dish">
+            <span>Sweet Corn Soup</span>
+            <span class="price">89/-</span>
+        </div>
+        <div class="dish">
+            <span>Tomato Soup</span>
+            <span class="price">89/-</span>
+        </div>
+        <div class="dish">
+            <span>Hot & Sour Soup</span>
+            <span class="price">89/-</span>
+        </div>
+        <div class="dish">
+            <span>Manchow Soup</span>
+            <span class="price">99/-</span>
+        </div>
+        <!-- Add other soup dishes here -->
+
+    </section>
+    <section>
+        <h2>सीधे CHINA से</h2>
+        <div class="dish">
+            <span>Hakka Noodles</span>
+            <span class="price">89/-</span>
+        </div>
+        <div class="dish">
+            <span>Plain Noodles</span>
+            <span class="price">99/-</span>
+        </div>
+        <div class="dish">
+            <span>Chilli Garlic Noodles</span>
+            <span class="price">99/-</span>
+        </div>
+        <div class="dish">
+            <span>Schezwan Noodles</span>
+            <span class="price">109/-</span>
+        </div>
+        <div class="dish">
+            <span>Singapore Noodles</span>
+            <span class="price">119/-</span>
+        </div>
+        <div class="dish">
+            <span>Noodles with Manchurian</span>
+            <span class="price">119/-</span>
+        </div>
+        <div class="dish">
+            <span>Noodles with Paneer</span>
+            <span class="price">129/-</span>
+        </div>
+        <div class="dish">
+            <span>American Chop suey</span>
+            <span class="price">99/-</span>
+        </div>
+        <div class="dish">
+            <span>Veg Chow Mein</span>
+            <span class="price">99/-</span>
+        </div>
+        <div class="dish">
+            <span>Fried Rice</span>
+            <span class="price">99/-</span>
+        </div>
+        <div class="dish">
+            <span>Manchurian (dry)</span>
+            <span class="price">119/-</span>
+        </div>
+        <div class="dish">
+            <span>(gravy)</span>
+            <span class="price">109/-</span>
+        </div>
+        <div class="dish">
+            <span>(semi-gravy)</span>
+            <span class="price">109/-</span>
+        </div>
+        <div class="dish">
+            <span>Manchurian Rice</span>
+            <span class="price">119/-</span>
+        </div>
+        <div class="dish">
+            <span>Noodles Rice</span>
+            <span class="price">119/-</span>
+        </div>
+        <div class="dish">
+            <span>Triple Rice</span>
+            <span class="price">119/-</span>
+        </div>
+        <div class="dish">
+            <span>Chilli paneer Rice</span>
+            <span class="price">129/-</span>
+        </div>
+        <div class="dish">
+            <span>Singapore Rice</span>
+            <span class="price">129/-</span>
+        </div>
+        <div class="dish">
+            <span>Hong Kong Rice</span>
+            <span class="price">129/-</span>
+        </div>
+        <div class="dish">
+            <span>ChIlli Garlic Rice</span>
+            <span class="price">129/-</span>
+        </div>
+        <!-- Add other Chinese dishes here -->
+    </section>
+    <section>
+        <h2>स्वाद ITALY  दा</h2>
+        <div class="dish">
+            <span>Red Arrabbiata Sauce Pasta</span>
+            <span class="price">149/-</span>
+        </div>
+        <div class="dish">
+            <span>White Alferdo Sauce Pasta</span>
+            <span class="price">149/-</span>
+        </div>
+        <div class="dish">
+            <span>Pink Sauce Pasta</span>
+            <span class="price">169/-</span>
+        </div>
+        <div class="dish">
+            <span>Green Spiral Pasta</span>
+            <span class="price">169/-</span>
+        </div>
+        <div class="dish">
+            <span>Cheese White Sauce Pasta</span>
+            <span class="price">189/-</span>
+        </div>
+        <h2>PIZZA</h2>
+        <div class="dish">
+            <span>Margherita Pizza</span>
+            <span class="price">149/-</span>
+        </div>
+        <div class="dish">
+            <span>Capsicum Pizza</span>
+            <span class="price">149/-</span>
+        </div>
+        <div class="dish">
+            <span>Veg Supreme Pizza</span>
+            <span class="price">169/-</span>
+        </div>
+        <div class="dish">
+            <span>Tomato Cheese Pizza</span>
+            <span class="price">169/-</span>
+        </div>
+        <div class="dish">
+            <span>Cheese and Onion Pizza</span>
+            <span class="price">169/-</span>
+        </div>
+        <div class="dish">
+            <span>Cheese and Corn Pizza</span>
+            <span class="price">169/-</span>
+        </div>
+        <div class="dish">
+            <span>Double Cheese Margarita Pizza</span>
+            <span class="price">199/-</span>
+        </div>
+        <div class="dish">
+            <span>Paneer Tikka Masala Pizza</span>
+            <span class="price">199/-</span>
+        </div>
+        <!-- Add other Italian dishes here -->
+    </section>
+    
+    <section>
+        <h2>BREADS & SANDWICHES</h2>
+        <div class="dish">
+            <span>Garlic Bread</span>
+            <span class="price">99/-</span>
+        </div>
+        <div class="dish">
+            <span>Veg Mayo Sandwich</span>
+            <span class="price">79/-</span>
+        </div>
+        <div class="dish">
+            <span>Cheese Garlic Bread</span>
+            <span class="price">119/-</span>
+        </div>
+        <div class="dish">
+            <span>Mexican Pizza Sandwich</span>
+            <span class="price">79/-</span>
+        </div>
+        <div class="dish">
+            <span>Cheese Chutney Sandwich</span>
+            <span class="price">79/-</span>
+        </div>
+        <div class="dish">
+            <span>Paneer Tikka Sandwich</span>
+            <span class="price">89/-</span>
+        </div>
+        <div class="dish">
+            <span>Corn Cheese Sandwich</span>
+            <span class="price">79/-</span>
+        </div>
+        <div class="dish">
+            <span>Masala Club Sandwich</span>
+            <span class="price">149/-</span>
+        </div>
+        <div class="dish">
+            <span>Tandoori Sandwich</span>
+            <span class="price">79/-</span>
+        </div>
+        <div class="dish">
+            <span>Cheese Club Sandwich</span>
+            <span class="price">169/-</span>
+        </div>
+        <div class="dish">
+            <span>Garlic Bread</span>
+            <span class="price">99/-</span>
+        </div>
+        <div class="dish">
+            <span>Veg Mayo Sandwich</span>
+            <span class="price">79/-</span>
+        </div>
+        <div class="dish">
+            <span>Cheese Garlic Bread</span>
+            <span class="price">119/-</span>
+        </div>
+        <div class="dish">
+            <span>Mexican Pizza Sandwich</span>
+            <span class="price">79/-</span>
+        </div>
+        <div class="dish">
+            <span>Cheese Chilli Garlic Bread</span>
+            <span class="price">129/-</span>
+        </div>
+        <div class="dish">
+            <span>Bombay Kaccha Sandwich</span>
+            <span class="price">59/-</span>
+        </div>
+        <div class="dish">
+            <span>Masala Sandwich</span>
+            <span class="price">59/-</span>
+        </div>
+        <div class="dish">
+            <span>Vegetable Sandwich</span>
+            <span class="price">79/-</span>
+        </div>
+        <div class="dish">
+            <span>Cheese Sandwich</span>
+            <span class="price">79/-</span>
+        </div>
+        <div class="dish">
+            <span>Cheese Masala Sandwich</span>
+            <span class="price">79/-</span>
+        </div>
+        <div class="dish">
+            <span>Pizza Sandwich</span>
+            <span class="price">79/-</span>
+        </div>
+        <div class="dish">
+            <span>Cheese Pizza Sandwich</span>
+            <span class="price">89/-</span>
+        </div>
+        <div class="dish">
+            <span>Coleslaw Sandwich</span>
+            <span class="price">89/-</span>
+        </div>
+        <div class="dish">
+            <span>Schezwan Veg Paneer Sandwich</span>
+            <span class="price">89/-</span>
+        </div>
+        <div class="dish">
+            <span>Schezwan Cheese Sandwich</span>
+            <span class="price">89/-</span>
+        </div>
+        <div class="dish">
+            <span>Schezwan Masala Sandwich</span>
+            <span class="price">89/-</span>
+        </div>
+        <div class="dish">
+            <span>Cheese Chutney Sandwich</span>
+            <span class="price">79/-</span>
+        </div>
+        <div class="dish">
+            <span>Paneer Tikka Sandwich</span>
+            <span class="price">89/-</span>
+        </div>
+        <div class="dish">
+            <span>Corn Cheese Sandwich</span>
+            <span class="price">79/-</span>
+        </div>
+        <div class="dish">
+            <span>Masala Club Sandwich</span>
+            <span class="price">149/-</span>
+        </div>
+        <div class="dish">
+            <span>Tandoori Sandwich</span>
+            <span class="price">79/-</span>
+        </div>
+        <div class="dish">
+            <span>Cheese Club Sandwich</span>
+            <span class="price">169/-</span>
+        </div>
+    
+    </section>
+    <section>
+        <h2>BURGERS</h2>
+        
+        <div class="dish">
+            <span>Veg Burger</span>
+            <span class="price">49/-</span>
+        </div>
+        <div class="dish">
+            <span>Cheese Burger</span>
+            <span class="price">59/-</span>
+        </div>
+        <div class="dish">
+            <span>Mayo Burger</span>
+            <span class="price">59/-</span>
+        </div>
+        <div class="dish">
+            <span>Plain Aloo Tikki</span>
+            <span class="price">49/-</span>
+        </div>
+        <div class="dish">
+            <span>Double Aloo Tikki</span>
+            <span class="price">59/-</span>
+        </div>
+    
+        <!-- Add other burger dishes here -->
+    </section>
+    
+    <section>
+        <h2>GARAM तवे स</h2>
+        
+        <div class="dish">
+            <span>Tava Roti</span>
+            <span class="price">9/-</span>
+        </div>
+        <div class="dish">
+            <span>Butter Roti</span>
+            <span class="price">12/-</span>
+        </div>
+        <div class="dish">
+            <span>Ghee Roti</span>
+            <span class="price">12/-</span>
+        </div>
+        <div class="dish">
+            <span>Plain Paratha</span>
+            <span class="price">19/-</span>
+        </div>
+        <div class="dish">
+            <span>Aloo Paratha</span>
+            <span class="price">39/-</span>
+        </div>
+        <div class="dish">
+            <span>Methi Paratha</span>
+            <span class="price">39/-</span>
+        </div>
+        <div class="dish">
+            <span>Gobhi Paratha</span>
+            <span class="price">39/-</span>
+        </div>
+        <div class="dish">
+            <span>Sev Paratha</span>
+            <span class="price">39/-</span>
+        </div>
+        <div class="dish">
+            <span>Pyaaz Paratha</span>
+            <span class="price">39/-</span>
+        </div>
+        <div class="dish">
+            <span>Punjabi Paratha</span>
+            <span class="price">39/-</span>
+        </div>
+        <div class="dish">
+            <span>Mooli Paratha</span>
+            <span class="price">39/-</span>
+        </div>
+        <div class="dish">
+            <span>Gajar Paratha</span>
+            <span class="price">39/-</span>
+        </div>
+        <div class="dish">
+            <span>Tamatar Paratha</span>
+            <span class="price">39/-</span>
+        </div>
+        <div class="dish">
+            <span>Mix Paratha</span>
+            <span class="price">49/-</span>
+        </div>
+        <div class="dish">
+            <span>Paneer Paratha</span>
+            <span class="price">49/-</span>
+        </div>
+        <div class="dish">
+            <span>Cheese Paratha</span>
+            <span class="price">49/-</span>
+        </div>
+        <div class="dish">
+            <span>Double Cheese Paratha</span>
+            <span class="price">59/-</span>
+        </div>
+        <div class="dish">
+            <span>Paneer Cheese Paratha</span>
+            <span class="price">59/-</span>
+        </div>
+    
+        <!-- Add other dishes here -->
+    </section>
+    
+<section>
+    <h2>THALI MANGWAYI KYA??</h2><br>
+    <span class="thali">RASOI REGULAR -      </span > <span class="price">99/-</span>
+    <p>Butter Roti, 2 Seasonal Veg Sabji, Rice, Daal Fry, Curry/Masala Chaas, Paapad, Salad, Achar</p>
+    <span class="thali">RASOI SPECIAL - </span> <span class="price">149/-</span>
+    <p>Butter Roti, 2 Seasonal Veg Sabji, 1 Paneer Special, Jeera Rice, Daal Fry, Curry/Masala Chaas, 1 Sweet Dish, Paapad, Salad, Achar</p>
+</section>
+    
+    <section>
+        <h2>VEG MAINCOURSE</h2>
+    
+        <div class="dish">
+            <span>Sev Tamatar</span>
+            <span class="price">129/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Aloo Palak</span>
+            <span class="price">139/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Sev Masala</span>
+            <span class="price">129/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Plain Palak</span>
+            <span class="price">139/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Sev Bhaji</span>
+            <span class="price">129/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Aloo Gobhi</span>
+            <span class="price">139/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Aloo Fry</span>
+            <span class="price">129/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Aloo 2 Pyaza</span>
+            <span class="price">139/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Jeera Aloo</span>
+            <span class="price">129/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Channa Masala</span>
+            <span class="price">139/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Aloo Matar</span>
+            <span class="price">129/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Special Dum Aloo</span>
+            <span class="price">149/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Aloo Shimla</span>
+            <span class="price">129/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Aloo Chole</span>
+            <span class="price">149/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Bhindi Masala</span>
+            <span class="price">129/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Corn Palak</span>
+            <span class="price">149/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Bhindi Fry</span>
+            <span class="price">129/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Methi Matar Malai</span>
+            <span class="price">149/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Matar Masala</span>
+            <span class="price">129/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Mawa Mattar</span>
+            <span class="price">149/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Veg Jalfrezi</span>
+            <span class="price">129/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Veg Kofta</span>
+            <span class="price">169/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Stuffed Tomato</span>
+            <span class="price">129/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Nargees Kofta</span>
+            <span class="price">179/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Dudh Sev</span>
+            <span class="price">139/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Kaju Curry</span>
+            <span class="price">179/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Punjabi Sev</span>
+            <span class="price">139/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Kaju Masala</span>
+            <span class="price">189/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Sev Chola</span>
+            <span class="price">139/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Malai Kofta</span>
+            <span class="price">189/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Mixed Veg</span>
+            <span class="price">139/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Paneer Kofta</span>
+            <span class="price">199/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Aloo 65</span>
+            <span class="price">139/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Kaju Paneer</span>
+            <span class="price">199/-</span>
+        </div>
+    
+    </section>
+    <section>
+        <h2>PANEER MAINCOURSE</h2>
+    
+        <div class="dish">
+            <span>Mutter Paneer</span>
+            <span class="price">149/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Handi Paneer</span>
+            <span class="price">149/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Palak Paneer</span>
+            <span class="price">149/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Chola Paneer</span>
+            <span class="price">149/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Sev Paneer</span>
+            <span class="price">149/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Kadai Paneer</span>
+            <span class="price">169/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Paneer Punjabi</span>
+            <span class="price">169/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Paneer Pasanda</span>
+            <span class="price">169/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Paneer Chatpata</span>
+            <span class="price">169/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Laal Pari Paneer</span>
+            <span class="price">169/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Butter Masala Paneer</span>
+            <span class="price">169/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Kolhapuri Shahi Paneer</span>
+            <span class="price">179/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Paneer Dhoom</span>
+            <span class="price">179/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Paneer 65</span>
+            <span class="price">179/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Paneer Do Pyaza</span>
+            <span class="price">179/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Paneer Mirch</span>
+            <span class="price">179/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Paneer Bhurji</span>
+            <span class="price">179/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Paneer Dildar</span>
+            <span class="price">179/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Paneer Hydrabadi</span>
+            <span class="price">189/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Paneer Makhanawala</span>
+            <span class="price">189/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Cheese Paneer</span>
+            <span class="price">189/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Paneer Tika Masala</span>
+            <span class="price">199/-</span>
+        </div>
+    
+    </section>
+    <section>
+        <h2>DAAL</h2>
+    
+        <div class="dish">
+            <span>Plain Daal</span>
+            <span class="price">89/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Jeera Daal</span>
+            <span class="price">89/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Daal Fry</span>
+            <span class="price">99/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Daal Hari Mirch</span>
+            <span class="price">99/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Daal Khati Meethi</span>
+            <span class="price">109/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Daal Tadka</span>
+            <span class="price">109/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Makhani Daal</span>
+            <span class="price">119/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Daal Double Tadka</span>
+            <span class="price">119/-</span>
+        </div>
+    
+    </section>
+    <section>
+        <h2>RICE</h2>
+    
+        <div class="dish">
+            <span>Plain Rice</span>
+            <span class="price">89/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Jeera Rice</span>
+            <span class="price">99/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Curd Rice</span>
+            <span class="price">99/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Butter Khichdi</span>
+            <span class="price">109/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Veg Pulao</span>
+            <span class="price">109/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Masala Rice</span>
+            <span class="price">109/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Veg Biryani</span>
+            <span class="price">129/-</span>
+        </div>
+    
+    </section>
+    <section>
+        <h2>देसी CHILLERS</h2>
+    
+        <div class="dish">
+            <span>Plain Dahi</span>
+            <span class="price">29/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Boondi Raita</span>
+            <span class="price">39/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Onion Raita</span>
+            <span class="price">39/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Fruit Raita</span>
+            <span class="price">49/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Butter Milk</span>
+            <span class="price">19/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Masala Chaas</span>
+            <span class="price">29/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Fresh Lime</span>
+            <span class="price">29/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Lassi</span>
+            <span class="price">39/-</span>
+        </div>
+    
+    </section>
+    <section>
+        <h2>SHAKES & MOJITO</h2>
+    
+        <div class="dish">
+            <span>Strawberry Shake</span>
+            <span class="price">99/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Gems Shake</span>
+            <span class="price">109/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Oreo Shake</span>
+            <span class="price">119/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Kitkat Shake</span>
+            <span class="price">119/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Choco Brownie Shake</span>
+            <span class="price">139/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Virgin Mojito</span>
+            <span class="price">111/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Watermelon Mojito</span>
+            <span class="price">111/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Blueberry</span>
+            <span class="price">121/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Blue Lagoon</span>
+            <span class="price">121/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Chocolate Shake</span>
+            <span class="price">99/-</span>
+        </div>
+    
+    </section>
+    <section>
+        <h2>PAPAD</h2>
+    
+        <div class="dish">
+            <span>Fry Papad</span>
+            <span class="price">19/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Masala Papad Fry</span>
+            <span class="price">29/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Roast Papad</span>
+            <span class="price">15/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Roast Masala Papad</span>
+            <span class="price">29/-</span>
+        </div>
+    
+    </section>
+    <section>
+        <h2>SALAD</h2>
+    
+        <div class="dish">
+            <span>Onion Tomato</span>
+            <span class="price">19/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Green Salad</span>
+            <span class="price">39/-</span>
+        </div>
+    
+    </section>
+    <section>
+        <h2>DESSERT & COLD COFFEE</h2>
+    
+        <div class="dish">
+            <span>Tea</span>
+            <span class="price">19/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Coffee</span>
+            <span class="price">29/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Cold Coffee</span>
+            <span class="price">89/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Cold Coffee with Chocolate</span>
+            <span class="price">89/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Cold Coffee with Ice Cream</span>
+            <span class="price">99/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Choco Frappe</span>
+            <span class="price">89/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Vanilla Frappe</span>
+            <span class="price">89/-</span>
+        </div>
+    
+        <div class="dish">
+            <span>Brownie Cold Coffee</span>
+            <span class="price">119/-</span>
+        </div>
+    
+    </section>
+                                
+    <footer>
+        <p>&copy; 2023 Your Restaurant Name. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
